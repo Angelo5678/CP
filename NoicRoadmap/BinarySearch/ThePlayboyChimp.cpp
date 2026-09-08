@@ -46,6 +46,9 @@ int higher(int h){
 }
 
 signed main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int n, t, h;
 
     cin >> n;

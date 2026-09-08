@@ -14,6 +14,9 @@ typedef priority_queue <ii, vector<ii>, greater<ii>> pq_min;
 vi strips(100000), points(100000);
 
 signed main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int n, m;
     
     cin >> n >> m;

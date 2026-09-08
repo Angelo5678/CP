@@ -26,6 +26,9 @@ bool slices(int x){
 }
 
 signed main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     cin >> N >> M;
 
     for (int i = 1; i <= M; i++){
