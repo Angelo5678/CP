@@ -20,19 +20,21 @@ signed main(){
         int n;
         cin >> n;
         vi arr(n);
-        int l = 0, r = n - 1, start = 0;
         for (int i = 0; i < n; i++)
             cin >> arr[i];
-        while (l < n){
-            if (arr[r] != 0) arr[r] = 1;
-            else r--;
-            if (!start && arr[l] != 0){
-                arr[l] = 1;
-                start = 1;
-            } else if (arr[l] == -1) arr[l] = 0;
-            cout << arr[l] << ' ';
-            l++;
+        for (int i = 0; i < n; i++){
+            if (arr[i] == -1) arr[i] = 1;
+            if (arr[i] == 1) break;
         }
+        for (int i = n - 1; i >= 0; i--){
+            if (arr[i] == -1) arr[i] = 1;
+            if (arr[i] == 1) break;
+        }
+        for (int i = 0; i < n; i++){
+            if (arr[i] == -1) arr[i] = 0;
+            cout << arr[i] << ' ';
+        }
+
         cout << '\n';
         t--;
     }
