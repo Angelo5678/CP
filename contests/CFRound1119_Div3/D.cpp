@@ -11,24 +11,41 @@ typedef pair<int, int> ii;
 typedef vector<ii> vii;
 typedef priority_queue <ii, vector<ii>, greater<ii>> pq_min;
 
-typedef struct MEX {
-    multiset<int> MS;
-    int mex = 0;
-};
-
-
 signed main(){
     int t;
 
     cin >> t;
 
     while (t > 0){
-        MEX A, B, C;
-        int n;
-        int arr[n];
-        for (int i = 0; i < n; i++)
+        int n; cin >> n;
+        int zeros = 0;
+        vi arr(n);
+        for (int i = 0; i < n; i++){
             cin >> arr[i];
-        
+            if (arr[i] == 0) zeros++;
+        }
+        if (zeros == 1) cout << "NO" << '\n';
+        else {
+            cout << "YES" << '\n';
+            if (zeros == 0){
+                for (int i = 0; i < n; i++)
+                    cout << 'A';
+            } else {
+                int bin = 1;
+                for (int i = 0; i < n; i++) {
+                    if (arr[i] != 0) cout << 'C';
+                    else if (bin) {
+                        cout << 'A';
+                        bin = 0;
+                    } else {
+                        cout << 'B';
+                        bin = 1;
+                    }
+                }
+            }
+            cout << '\n';
+        }
+        t--;
     }
     
 
